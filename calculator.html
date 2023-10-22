@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:rgb(143, 22, 143);
+            text-align: center;
+        }
+        #container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0px;
+        }
+        #main{
+            background-color: black;
+            width:100%;
+            max-width: 210px;
+            height: 340px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-top: 0px;
+            border-radius: 10px;
+            border: 3px solid white;
+        }
+        .btn{
+            width: 100%;
+            max-width: 60px;
+            height: 45px;
+            color: white;
+            font-weight: 500;
+            background-color: #6d6d6d;
+            border: 1px;
+            outline: 0;
+            margin: 0.5px;
+        }
+        #input_box{
+            width:100%;
+            height: 100px;
+            margin-top: 0px;
+            border: 0;
+            outline: 0;
+            font-size: large;
+            font-weight: 900;
+            background-color: black;
+            color: white;
+         }
+         .btn_styles{
+            display: flex;
+            width: 100%;
+         }
+         header{
+            text-align: center;
+            color: white;
+            font-weight: 800;
+            margin-top: 9%;
+            font-family: Arial, Helvetica, sans-serif;
+
+         }
+         .de1{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+         }
+         .de{
+            position: relative;
+            max-width: 49%;
+            height:40px;
+            width: 100%;
+            color: white;
+            font-weight: 500;
+            background-color: #6d6d6d;
+            outline: 0;
+            border: 0;
+            margin-left: 0.8px;
+            margin-right: 0.5px;
+        }
+        @media(max-width:600px)
+        {
+            header{
+            text-align: center;
+            color: white;
+            font-weight: 200;
+            font-size: 11px;
+            margin-top: 9%;
+            font-family: Arial, Helvetica, sans-serif;
+
+         }
+         #container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0px;
+        }
+        #main{
+            background-color: black;
+            width:100%;
+            max-width: 110px;
+            height: 220px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-top: 0px;
+            border-radius: 10px;
+            border: 3px solid white;
+        }
+        .btn_styles{
+            display: flex;
+            width: 100%;
+         }
+         .btn{
+            width: 100%;
+            max-width: 30px;
+            height: 25px;
+            color: white;
+            font-weight: 500;
+            background-color: #6d6d6d;
+            border: 1px;
+            outline: 0;
+            margin: 0.5px;
+        }
+        #input_box{
+            width:100%;
+            height: 50px;
+            margin-top: 0px;
+            border: 0;
+            outline: 0;
+            font-size: medium;
+            font-weight: 450;
+            background-color: black;
+            color: white;
+         }
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Calculator Design</h1>
+    </header>
+    <div id="container">
+    <div id="main">
+         <input type="text" id="input_box">
+         <div class="btn_styles">
+         <input type="button" value="0" class="btn" id="btn0" onclick="input_box.value+='0'">
+         <input type="button" value="1" class="btn" id="btn1" onclick="input_box.value+='1'">
+         <input type="button" value="2" class="btn" id="btn2" onclick="input_box.value+='2'">
+         <input type="button" value="3" class="btn" id="btn3" onclick="input_box.value+='3'">
+        </div>
+        <div class="btn_styles">
+         <input type="button" value="4" class="btn" id="btn4" onclick="input_box.value+='4'">
+         <input type="button" value="5" class="btn" id="btn5" onclick="input_box.value+='5'">
+         <input type="button" value="6" class="btn" id="btn6" onclick="input_box.value+='6'">
+         <input type="button" value="7" class="btn" id="btn7" onclick="input_box.value+='7'">
+        </div>
+        <div class="btn_styles">
+         <input type="button" value="8" class="btn" id="btn8" onclick="input_box.value+='8'">
+         <input type="button" value="9" class="btn" id="btn9" onclick="input_box.value+='9'">
+         <input style=background-color:violet type="button" id="btnm" value="=" class="btn" onclick=input_box.value=eval(input_box.value)>
+         <input style=background-color:violet type="button" value="+" class="btn" id="+" onclick="input_box.value+='+'">
+        </div>
+        <div class="btn_styles">
+         <input style=background-color:violet type="button" value="-" class="btn" id="-" onclick="input_box.value+='-'">
+         <input style=background-color:violet type="button" value="*" class="btn" id="*" onclick="input_box.value+='*'">
+         <input style=background-color:violet type="button" value="/" class="btn" id="/" onclick="input_box.value+='/'">
+        </div>
+        <div class="de1">
+            <input type="button" value="Del" class="de" onclick="input_box.value=input_box.value.toString().slice(0,-1)">
+            <input type="button" value="AC" class="de" onclick="input_box.value='0'">
+        </div>
+    </div>
+</div>
+<!---<script>
+    var ip=document.getElementById("input_box")
+    var btn0=document.getElementById("btn0")
+    var btn1=document.getElementById("btn1")
+    var btn2=document.getElementById("btn2")
+    var btn3=document.getElementById("btn3")
+    var btn4=document.getElementById("btn4")
+    var btn5=document.getElementById("btn5")
+    var btn6=document.getElementById("btn6")
+    var btn7=document.getElementById("btn7")
+    var btn8=document.getElementById("btn8")
+    var btn9=document.getElementById("btn9")
+    btn0.addEventListener("click",function(){
+        c=btn0.value
+        ip.value=c
+        console.log(c)
+    })
+    btn1.addEventListener("click",function(){
+        c=btn1.value
+        ip.value=c
+        console.log(c)
+    })
+    btn2.addEventListener("click",function(){
+        c=btn2.value
+        ip.value=c
+        console.log(c)
+    })
+    btn3.addEventListener("click",function(){
+        c=btn3.value
+        ip.value=c
+        console.log(c)
+    })
+    btn4.addEventListener("click",function(){
+        c=btn4.value
+        ip.value=c
+        console.log(c)
+    })
+    btn5.addEventListener("click",function(){
+        c=btn5.value
+        ip.value=c
+        console.log(c)
+    })
+    btn6.addEventListener("click",function(){
+        c=btn6.value
+        ip.value=c
+        console.log(c)
+    })
+    btn7.addEventListener("click",function(){
+        c=btn7.value
+        ip.value=c
+        console.log(c)
+    })
+    btn8.addEventListener("click",function(){
+        c=btn8.value
+        ip.value=c
+        console.log(c)
+    })
+    btn9.addEventListener("click",function(){
+        c=btn9.value
+        ip.value=c
+        console.log(c)
+    })
+
+
+</script>-->
+<!--<script>
+    var input_box=document.getElementById("input_box")
+    var btn=document.getElementById("btnm")
+    
+    var s
+    input_box.addEventListener("input",function(e){
+        var s=e.target.value
+        console.log(s)
+    })
+    btnm.onclick=function(){
+        s.value=eval(s)
+         
+    }
+</script>-->
+</body>
+</html>
